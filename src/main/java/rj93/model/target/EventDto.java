@@ -10,4 +10,5 @@ import lombok.experimental.SuperBuilder;
 public class EventDto {
     private long eventId;
     private long requestorId;
+    private boolean draftSupported;
 }

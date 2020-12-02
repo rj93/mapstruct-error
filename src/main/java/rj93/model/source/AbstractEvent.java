@@ -10,4 +10,6 @@ import lombok.experimental.SuperBuilder;
 public abstract class AbstractEvent {
     private long id;
     private long requestorId;
+
+    public abstract boolean supportsDraft();
 }

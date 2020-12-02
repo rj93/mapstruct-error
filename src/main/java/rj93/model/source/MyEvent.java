@@ -11,4 +11,9 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public class MyEvent extends AbstractEvent {
     private String eventName;
+
+    @Override
+    public boolean supportsDraft() {
+        return true;
+    }
 }

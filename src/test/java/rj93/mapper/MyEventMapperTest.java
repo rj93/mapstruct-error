@@ -21,6 +21,15 @@ public class MyEventMapperTest {
     }
 
     @Test
+    public void testSupportsDraft() {
+        MyEvent myEvent = createEvent();
+
+        MyEventDto result = myEventMapper.map(myEvent);
+
+        assertSame(result.isDraftSupported(), myEvent.supportsDraft());
+    }
+
+    @Test
     public void testRequestorId() {
         MyEvent myEvent = createEvent();
 
