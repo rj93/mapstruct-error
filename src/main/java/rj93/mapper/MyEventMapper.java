@@ -1,16 +1,13 @@
 package rj93.mapper;
 
+import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
 import rj93.model.source.MyEvent;
 import rj93.model.target.MyEventDto;
 
-@Mapper(uses = EventMapper.class)
+@Mapper(config = EventMapperConfig.class)
 public interface MyEventMapper {
 
-    @Mappings({
-            @Mapping(target = "eventName", source = "eventName"),
-    })
+    @InheritConfiguration
     MyEventDto map(MyEvent event);
 }
